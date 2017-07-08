@@ -62,14 +62,12 @@ You will then need to supply some other configuration directives in
 
 ### Running ParanoYak
 
-You can run ParanoYak with `npm start` or `/paranoyak/server/main.js`. Make
+You can run ParanoYak with `sudo node /paranoyak/server/main.js`. Make
 sure there is an opening in your firewall for port 443 (the default port for
 HTTPS traffic), and optionally, but preferrably port 80 (the default port for
 unencrypted HTTP traffic) as well. Note that, if a user connects to the 
 unencrypted page, he will be immediately redirected to the encrypted page.
 The unencrypted page exists just for convenience.
-
-You might need to run it as administrator, but I can't remember.
 
 ## Features
 
