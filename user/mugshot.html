@@ -1,0 +1,28 @@
+<html ng-app="mugshotapp">
+  <head>
+    <title>Upload a Mugshot</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/mugshot.css">
+    <script type="text/javascript" src="/angular.min.js"></script>
+    <script type="text/javascript" src="/mugshot.js"></script>
+  </head>
+  <body>
+    <h3>Upload a mugshot</h3>
+    <div>You may not upload a file larger than 200KB. Upload an approximately square image.</div>
+    <div>If you do not upload a mugshot, you will have a rainbow as your profile picture.</div>
+    <div id="errors"></div>
+    <form id="mugform" name="mugform" ng-controller="mugform" ng-submit="uploadMugshot()">
+      <input id="mugshot" name="mugshot" type="file" class="boop" ng-required="true" onchange="updateMugshotPreview()"></input>
+      <img id="preview" alt="Mugshot Preview" src="" />
+      <input
+        type="submit"
+        class="boop"
+        value="Set this as my mugshot"
+        ng-disabled="mugform.$invalid">
+      </input>
+    </form>
+  </body>
+</html>

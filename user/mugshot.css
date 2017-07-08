@@ -1,0 +1,75 @@
+body {
+  background-color: #111111;
+  margin: 0px;
+  font-family: Tahoma;
+  font-size: 12pt;
+  color: #CC00AA;
+  text-align: center;
+  margin-top: 25px;
+}
+
+::selection {
+  background-color: none;
+  color: yellow;
+}
+
+::-moz-selection {
+  background-color: none;
+  color: yellow;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#mugform {
+  margin: auto;
+  margin-top: 50px;
+  padding: 0px;
+  vertical-align: top;
+}
+
+.boop {
+  width: 10vw;
+  min-width: 200px;
+  display: block;
+  margin: auto;
+}
+
+input[type='file'] {
+  padding: 10px;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+input[type='submit'] {
+  border-radius: 5px;
+  color: #CC00AA;
+  background-color: #660044;
+  padding: 10px;
+  border: 0;
+  display: block;
+  margin-top: 5px;
+}
+
+input[type='submit']:hover {
+  color: yellow;
+  background-color: #CC00AA;
+}
+
+input[type='submit']:disabled {
+  color: #CCCCCC;
+  background-color: #888888;
+}
+
+#preview {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.error {
+  color: red;
+}

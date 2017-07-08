@@ -1,0 +1,38 @@
+<html ng-app="usersapp">
+
+<head>
+  <title>Users</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" type="text/css" href="/global.css">
+  <link rel="stylesheet" type="text/css" href="/users.css">
+  <script type="text/javascript" src="/angular.min.js"></script>
+  <script type="text/javascript" src="/users.js"></script>
+</head>
+<body>
+  <div id="loading"></div>
+  <div id="users">
+    <span id="title">Users</span>
+    <div class="mobile">Scroll buttons left and right</div>
+    <div id="userlist">
+      <button class="user" ng-repeat="user in users" ng-click="getUserInfo(user.name)">{{user.name}}</button>
+    </div>
+  </div>
+  <div id="userinfo" ng-show="selected">
+    <img ng-src="{{selected.mugshot}}" />
+    <h2 id="username">{{selected.name}}</h2>
+    <div id="infobody">
+      <div class="bodyfield" id="email">
+        Email Address:
+        <a ng-href="mailto:{{selected.email}}">
+          {{selected.email}}
+        </a>
+      </div>
+      <div class="bodyfield" id="bitcoin">Bitcoin Address: {{selected.bitcoin}}</div>
+      <div class="bodyfield" id="location">Location: {{selected.location}}</div>
+      <div class="bodyfield" id="bio">Biography: {{selected.bio}}</div>
+    </div>
+  </div>
+</body>
+</html>

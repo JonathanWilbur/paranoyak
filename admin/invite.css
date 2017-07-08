@@ -1,0 +1,25 @@
+body {
+  background-color: black;
+  color: #CC00AA;
+  margin: 0px;
+  padding: 0px;
+  font-family: Tahoma, Arial;
+}
+
+#inviteurl {
+  color: green;
+}
+
+::selection {
+  background-color: none;
+  color: yellow;
+}
+
+::-moz-selection {
+  background-color: none;
+  color: yellow;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

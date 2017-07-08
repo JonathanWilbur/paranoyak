@@ -1,0 +1,283 @@
+#sidebar {
+  margin: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #330011;
+  color: #CC00AA;
+  display: inline-block;
+  width: 200px;
+  height: 100vh;
+  float: left;
+}
+
+#sidebar button {
+  min-width: 80px;
+}
+
+#usersbutton {
+  display: none;
+}
+
+#me, #users {
+  margin: 10px;
+}
+
+#chat {
+  margin: 0px;
+  width: 60vw;
+  height: 100vh;
+  display: inline-block;
+}
+
+#history {
+  margin: 0px;
+  display: block;
+  height: 90vh;
+  overflow-y: scroll;
+  max-width: 1000px;
+}
+
+#paranoyak {
+  color: #CC00AA;
+  margin: 15px;
+  letter-spacing: 3pt;
+  font-size: 12pt;
+}
+
+#loading {
+  color: yellow;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+}
+
+#terminal {
+  width: 60vw;
+  margin: 0px;
+}
+
+#terminal span {
+  display: block;
+  margin: 0px;
+}
+
+#terminalField {
+  margin: 10px;
+  padding: 10px;
+  background-color: #222222;
+  border: none;
+  color: #CCCCCC;
+  resize: none;
+  border-radius: 5px;
+  font-family: Biko, Quicksand, Roboto, Arial;
+  font-size: 12pt;
+  vertical-align: top;
+  width: 80%;
+  max-width: 900px;
+  display: inline;
+}
+
+#postbutton {
+  vertical-align: top;
+  margin-top: 10px;
+  font-size: 12pt;
+  display: inline;
+}
+
+.message {
+  background-color: #111111;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.author {
+  color: #FFFFFF;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.timestamp {
+  color: #888888;
+  font-size: 8pt;
+}
+
+.body {
+  color: #CCCCCC;
+  font-size: 12pt;
+  word-wrap: break-word;
+}
+
+.symbol {
+  max-width: 50px;
+  max-height: 50px;
+  margin: 10px;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+#userlist {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 60vh;
+  font-size: 10pt;
+}
+
+#users h4 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.user {
+  margin-left: 5px;
+}
+
+.user:hover {
+  color: yellow;
+  background-color: #220011;
+}
+
+.username.offline {
+  color: #888888 !important;
+}
+
+.listmugshot {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+.listmugshot.offline {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+
+img.email {
+  height: 20px;
+  width: 20px;
+  float: right;
+  margin-top: 5px;
+}
+
+#userinfo {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40vw;
+  height: 60vh;
+  padding: 20px;
+  z-index: 999;
+  background-color: #330011;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+}
+
+#userinfo img {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#userinfo h4 {
+  display: inline-block;
+  font-size: 24pt;
+  margin: 20px;
+}
+
+#userinfo div {
+  margin: 10px;
+  overflow-wrap: break-word;
+}
+
+#userinfo button {
+  margin: 30px;
+  float: right;
+}
+
+.message.alert {
+  background-color: #551100;
+}
+
+.message.tweet {
+  color: #4099FF;
+  background-color: #000040;
+}
+
+div.message.mugshot {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+img.message.mugshot {
+  height: 50px;
+  width: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.message.content {
+  display: inline-block;
+  background-color: inherit;
+  width: 80%;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.youtubeVideo iframe {
+  width: 350px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+@media all and (max-width: 800px) {
+
+  #users, #me, #paranoyak {
+    display: none;
+  }
+
+  #sidebar {
+    display: block;
+    height: auto;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #sidebar button {
+    min-width: 75px;
+    margin-left: 5px;
+  }
+
+  #usersbutton {
+    display: inline-block;
+  }
+
+  #history {
+    width: 100vw;
+    height: 80vh;
+  }
+
+  #terminal {
+    width: 90vw;
+  }
+
+  #terminalField {
+    width: 60vw;
+  }
+
+  img.message.mugshot {
+    display: none;
+  }
+
+}

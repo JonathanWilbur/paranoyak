@@ -1,0 +1,66 @@
+<html ng-app="ang">
+<head>
+  <title>ParanoYak</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" type="text/css" href="/global.css">
+  <link rel="stylesheet" type="text/css" href="/chat.css">
+  <script type="text/javascript" src="/angular.min.js"></script>
+  <script type="text/javascript" src="/sanitize.js"></script>
+  <script type="text/javascript" src="/chat.js"></script>
+</head>
+<body>
+  <div id="loading"></div>
+  <div id="sidebar" ng-controller="sidebar">
+    <div id="paranoyak"><span>ParanoYak</span></div>
+    <div id="me" ng-controller="me">
+      <img id="mymugshot" class="listmugshot online" ng-src="{{mymugshot}}">
+      {{myname}}
+    </div>
+    <button id="infobutton" ng-click="goToInfoPage()">Information</button>
+    <button id="usersbutton" ng-click="goToUsersPage()">Users</button>
+    <button id="logoutbutton" ng-click="logout()">Log Out</button>
+    <div id="users" ng-controller="userlist">
+      <div id="userinfo" ng-show="selected">
+        <img ng-src="{{selected.mugshot}}" ng-show="selected" />
+        <h4>{{selected.name}}</h4>
+        <button ng-click="closeUserInfo()">Close</button>
+        <div>Email Address: <a ng-href="mailto:{{selected.email}}">{{selected.email}}</a></div>
+        <div>Bitcoin Address: {{selected.bitcoin}}</div>
+        <div>Location: {{selected.location}}</div>
+        <div>Biography: {{selected.bio}}</div>
+      </div>
+      <h4>Users</h4>
+      <div id="userlist">
+        <div class="user" ng-repeat="user in users | orderBy:'-online'" ng-click="userInfo(user.name)">
+          <img class="listmugshot online" ng-src="{{user.mugshot}}" ng-show="{{user.online}}" />
+          <img class="listmugshot offline" ng-src="{{user.mugshot}}" ng-show="{{!user.online}}" />
+          <span class="username online" ng-show="{{user.online}}">{{user.name}}</span>
+          <span class="username offline" ng-show="{{!user.online}}">{{user.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="chat" ng-controller="chat">
+    <div id="history">
+      <div class="message" ng-class="message.type" ng-repeat="message in messages">
+        <div class="mugshot message">
+          <img class="mugshot message" ng-src="{{message.mugshot}}"></img>
+        </div>
+        <div class="message content">
+          <span class="author">{{message.author}}</span>
+          <span class="timestamp">{{message.timestamp | date: 'MMM dd @ HH:mm'}}</span>
+          <div class="body" ng-bind-html="trustAsHtml(message.body)"></div>
+        </div>
+      </div>
+    </div>
+    <form id="terminal">
+      <input id="terminalField" ng-model="terminalField" autocomplete="off"
+      placeholder="Type your message here. Press enter or click the 'post' button to send.">
+      </input>
+      <button id="postButton" ng-click="postMessage();" ng-disabled="!terminalField">Post</button>
+    </form>
+  </div>
+</body>
+</html>

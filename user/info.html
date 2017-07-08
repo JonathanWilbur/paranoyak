@@ -1,0 +1,26 @@
+<html ng-app="ang">
+  <head>
+    <title>Information</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/info.css">
+    <script type="text/javascript" src="/angular.min.js"></script>
+    <script type="text/javascript" src="/info.js"></script>
+  </head>
+  <body>
+    <div id="loading"></div>
+    <div id="sidebar">
+      <span>Information</span>
+      <div class="mobile">Scroll buttons left and right</div>
+      <div id="topicslist">
+        <button class="topic" ng-repeat="topic in topics" ng-click="getInfoAbout(topic.topic)">{{topic.title}}</button>
+      </div>
+    </div>
+    <div id="infodiv">
+      <h2 id="infotitle"></h2>
+      <div id="infobody"></div>
+    </div>
+  </body>
+</html>

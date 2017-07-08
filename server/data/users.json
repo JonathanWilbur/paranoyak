@@ -1,0 +1,18 @@
+[
+    {
+        "name": "",
+        "passhash": "",
+        "salt": "",
+        "session": "",
+        "mugshot": "",
+        "email": "",
+        "bitcoin": "",
+        "location": "",
+        "bio": "",
+        "admin": false,
+        "online": false,
+        "lastLogin": 0,
+        "lastUpdate": 0,
+        "lastPost": 0
+    }
+]

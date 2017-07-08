@@ -1,0 +1,122 @@
+<html ng-app="signupapp">
+  <head>
+    <title>Sign up</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/signup.css">
+    <script type="text/javascript" src="/angular.min.js"></script>
+    <script type="text/javascript" src="/signup.js"></script>
+  </head>
+  <body>
+    <h3>Sign up for ParanoYak</h3>
+    <div id="signupdiv">
+      <form id="signupform" name="signupform" ng-controller="signupform" ng-submit="signup()">
+        <div id="username">
+          <input
+            type="text"
+            placeholder="username"
+            id="usernamefield"
+            class="boop"
+            ng-model="username"
+            ng-required="true"
+            ng-minlength="2"
+            ng-maxlength="32">
+            <!--ng-pattern="usernameRegex"-->
+          </input>
+          <span class="error" ng-show="signupform.username.$error.minlength">
+            Username may only contain letters and spaces and must be between 2 and 32 characters.
+          </span>
+        </div>
+        <div id="password">
+          <input
+            type="password"
+            name="password1"
+            placeholder="password (min. 12 chars)"
+            id="passwordfield1"
+            class="boop"
+            ng-model="password1"
+            ng-required="true"
+            ng-minlength="12"
+            ng-maxlength="32">
+            <!--ng-pattern="passwordRegex"-->
+          </input>
+          <span class="boop error" ng-show="signupform.password1.$error.minlength">
+            Password must be larger than 12 characters and less than 32 characters.
+          </span>
+          <input
+            type="password"
+            placeholder="password again"
+            id="passwordfield2"
+            class="boop"
+            ng-model="password2"
+            ng-required="true"
+            ng-minlength="12"
+            ng-maxlength="32">
+            <!--ng-pattern="passwordRegex"-->
+          </input>
+          <span class="boop error" ng-show="password1 != password2">
+            Passwords must match.
+          </span>
+        </div>
+        <div id="email">
+          <input
+            type="email"
+            placeholder="email (optional)"
+            id="emailfield"
+            class="boop"
+            ng-model="email"
+            ng-required="false">
+          </input>
+        </div>
+        <div id="bitcoin">
+          <input
+            type="text"
+            placeholder="bitcoin (optional)"
+            id="bitcoinfield"
+            class="boop"
+            ng-model="bitcoin"
+            maxlength="50"
+            ng-required="false">
+          </input>
+        </div>
+        <div id="location">
+          <input
+            type="text"
+            placeholder="location (optional)"
+            id="locationfield"
+            class="boop"
+            ng-model="location"
+            ng-required="false"
+            maxlength="32">
+          </input>
+        </div>
+        <div id="bio">
+          <input
+            type="text"
+            placeholder="short bio (optional)"
+            id="biofield"
+            class="boop"
+            ng-model="bio"
+            ng-required="false"
+            maxlength="128">
+          </input>
+        </div>
+        <input
+          type="submit"
+          id="signupbutton"
+          class="boop"
+          value="Sign up"
+          ng-disabled="signupform.$invalid || (password1 != password2)">
+        </input>
+        <div id="errors"></div>
+      </form>
+    </div>
+    <div id="intro">
+      <p>Welcome to ParanoYak.</p>
+      <p>ParanoYak is a chat service that stores all messages in memory.</p>
+      <p>For more information, you may visit the information page after you have signed up.</p>
+    </div>
+  </body>
+</html>

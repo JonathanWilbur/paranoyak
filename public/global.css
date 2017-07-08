@@ -1,0 +1,63 @@
+@font-face {
+  font-family: Roboto;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  src: url('/fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  src: url('/fonts/quicksand/Quicksand_Book.otf');
+}
+
+@font-face {
+  font-family: Biko;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  src: url('/fonts/biko/Biko_Regular.otf');
+}
+
+body {
+  background-color: black;
+  margin: 0px;
+  font-family: Biko, Quicksand, Roboto, Arial;
+  font-size: 16pt;
+}
+
+::selection {
+  background-color: none;
+  color: yellow;
+}
+
+::-moz-selection {
+  background-color: none;
+  color: yellow;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  border-radius: 5px;
+  color: #CC00AA;
+  background-color: #660044;
+  padding: 10px;
+  border: 0;
+  font-family: Biko, Quicksand, Roboto, Arial;
+}
+
+button:hover {
+  color: yellow;
+  background-color: #CC00AA;
+}
+
+button:disabled {
+  color: #CCCCCC;
+  background-color: #888888;
+}
